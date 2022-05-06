@@ -1,0 +1,132 @@
+  <view class="main" style="min-height: {{type === 'text' ? '840' : '808'}}rpx" bindtouchmove="touchMove">
+    <image class="main-icon" src="https://kf-ui.cdn-go.cn/weapp-image/latest/weapp-sndt/images/xinsheng_decor.png"></image>
+    <!-- card和article的头部 -->
+    <view wx:if="{{type !== 'text'}}">
+      <view class="main-top">
+        <view class="main-title">
+          {{title}}
+        </view>
+        <view class="main-audio" wx:if="{{type !== 'text'}}" catchtouchmove="catchMove">
+          <view class="audio">
+            <!-- card形式的进度条 -->
+            <view class="process">
+              <view class="bar-process" bindtap="tapProcess"></view>
+              <view class="mask-process" style="width: {{playTime * pxTimeRatio}}px;" bindtap="tapProcess">
+                <view class="mark-process-btn" bindtouchmove="moveProcessBtn" bindtouchend="endProcessBtn"></view>
+              </view>
+              <view class="process-time">
+                <view class="time">
+                  {{startTime}}
+                </view>
+                <view class="time">
+                  {{endTime}}
+                </view>
+              </view>
+            </view>
+            <view class="play-btn" bindtap="playAudio">
+              <image class="play-btn-icon" src="https://kf-ui.cdn-go.cn/weapp-image/latest/weapp-sndt/images/audio_{{isPlay ? 'play' : 'pause'}}.png"/>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view catchtouchmove="catchMove" class="fixed-main-top" style="z-index: {{fixedAudio && showMore ? 99 : -99}}; opacity: {{fixedAudio && showMore ? 1 : 0}}">
+        <view class="fixed-main-title">
+          {{title}}
+        </view>
+        <view class="audio fixed-audio">
+          <!-- card形式的进度条 -->
+          <view class="fixed-process">
+            <view class="bar-process" bindtap="tapProcess"></view>
+            <view class="mask-process" style="width: {{playTime * pxTimeRatio * fixedRatio}}px;" bindtap="tapProcess">
+              <view class="mark-process-btn" bindtouchmove="moveProcessBtn" bindtouchend="endProcessBtn"></view>
+            </view>
+            <view class="process-time">
+              <view class="time">
+                {{startTime}}
+              </view>
+              <view class="time">
+                {{endTime}}
+              </view>
+            </view>
+          </view>
+          <view class="play-btn fixed-play-btn" bindtap="playAudio">
+              <image class="play-btn-icon fixed-play-btn-icon" src="https://kf-ui.cdn-go.cn/weapp-image/latest/weapp-sndt/images/audio_{{isPlay ? 'play' : 'pause'}}.png"/>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 纯文字版本的头部 -->
+    <view class="main-top-text" wx:else>
+      {{topTitle}}
+    </view>
+    <view class="text-list text-list-{{type}} {{showMore ? 'more-text-list' : ''}}">
+      <!-- 滑动的view -->
+      <scroll-view
+        class="{{showMore ? 'more-scroll-view' : 'scroll-view'}}"
+        scroll-y="{{!showMore}}"
+        scroll-with-animation
+        enhanced="{{true}}"
+        show-scrollbar="{{false}}"
+        scroll-into-view="show_text_view_{{scrollIntoView}}"
+        fast-deceleration
+        binddragging="scrollViewDragging"
+        binddragend="scrollViewDragend"
+        scroll-anchoring
+        bounces="{{false}}"
+        scroll-top="{{scrollTop}}px"
+      >
+        <!-- 卡片版本 -->
+        <view wx:if="{{type === 'card'}}" class="scroll-view-content">
+          <view wx:for="{{textList}}" wx:for-index="index1" wx:key="index1" id="show_text_view_{{index1}}" class="card-audio-text {{item.type}}Text">
+            <view class="card-title" wx:if="{{item.type === 'left'}}">采访人</view>
+            <view class="card-text {{(msPlayTime >= item.startTime && msPlayTime < item.endTime)  ? 'show-card-text' : ''}} {{item.type}}-card-text" bindtap="tapText" data-time="{{item.startTime}}">
+              {{item.text}}
+              <image
+                class="card-triangle {{item.type}}-card-triangle"
+                wx:if="{{(msPlayTime >= item.startTime && msPlayTime < item.endTime)}}"
+                src="{{item.type === 'left' ? 'https://kf-ui.cdn-go.cn/weapp-image/latest/weapp-sndt/images/sharpcorner3.png' : 'https://kf-ui.cdn-go.cn/weapp-image/latest/weapp-sndt/images/sharpcorner4.png'}}"
+              >
+              </image>
+              <image
+                class="card-triangle {{item.type}}-card-triangle"
+                wx:else
+                src="{{item.type === 'left' ? 'https://kf-ui.cdn-go.cn/weapp-image/latest/weapp-sndt/images/sharpcorner1.png' : 'https://kf-ui.cdn-go.cn/weapp-image/latest/weapp-sndt/images/v3/sharpcorner2.png'}}"
+              >
+              </image>
+              <view class="show-animation show-animation-{{item.type}} {{(msPlayTime >= item.startTime && msPlayTime < item.endTime) ? 'show-animation-canvas' : ''}}">
+                <canvas class="process-animation" type="2d"></canvas>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!-- 文字版本 -->
+        <view wx:if="{{type === 'article'}}" class="scroll-view-content">
+          <view class="article-text-absolute">一行高度</view>
+          <view wx:for="{{textList}}" wx:key="index" class="article-text" id="show_text_view_{{index}}">
+             <view class="text {{msPlayTime >= item.startTime && msPlayTime < item.endTime ? 'show': ''}}" bindtap="tapText" data-time="{{item.startTime}}">
+              {{item.text}}
+            </view>
+          </view>
+        </view>
+        <!-- 纯文字版本 -->
+        <view wx:if="{{type === 'text'}}" class="scroll-view-content">
+          <view wx:for="{{voiceList}}" wx:key="index" class="text-text">
+            <view wx:if="{{item.title}}" class="one-text-title">
+              <view class="one-text-title-icon"></view>
+              <view>{{item.title}}</view>
+            </view>
+            <view wx:if="{{item.content}}" class="one-text {{item.minMargin ? 'one-text-margin' : ''}}">{{item.content}}</view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <!-- 点击加载更多 -->
+    <view class="more" bindtap="bindMore">
+      <image class="more-img {{showMore && 'more-img-no'}}" src="https://kf-ui.cdn-go.cn/weapp-image/latest/weapp-sndt/images/icon_dropdown1.png"></image>
+    </view>
+    <!-- 模糊 -->
+    <view class="vague-view" wx:if="{{!showMore}}"></view>
+  </view>
+  <view class="text-toast" wx:if="{{showTextToast}}">
+    音频播放错误，请返回重新进入
+  </view>

@@ -1,0 +1,61 @@
+.single {
+  margin-bottom: 10px;
+}
+.span {
+  width: 40rpx;
+  height: 40rpx;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: pink;
+  border-radius: 50%;
+  position: relative;
+  top: 4rpx;
+}
+.parent {
+  border: 1px solid pink;
+  /* line-height: 50px; */
+  /* line-height: 50px; */
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  /* line-height: 50px; */
+}
+.text {
+  font-size: 30rpx;
+  /* margin-left: 20rpx; */
+  font-family:  'PingFang SC';
+  color: #6E6E7B;
+  font-weight: 400;
+  line-height: 46rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  display: inline-block;
+  flex: 1;
+}
+
+.parent1 {
+  border: 1px solid pink;
+  font-size: 30rpx;
+  /* margin-left: 20rpx; */
+  font-family:  'PingFang SC';
+  color: #6E6E7B;
+  font-weight: 400;
+  line-height: 46rpx;
+  /* padding-left: 20rpx; */
+  /* display: flex; */
+}
+.span1 {
+  width: 40rpx;
+  height: 40rpx;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: pink;
+  border-radius: 50%;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+  /* position: relative;
+  top: 4rpx; */
+}
+.title {
+  margin-bottom: 20px;
+}

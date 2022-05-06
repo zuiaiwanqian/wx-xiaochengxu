@@ -1,0 +1,30 @@
+.label-radio {
+  position: relative;
+  width: 100%;
+  /* border: 1px solid pink; */
+  display: flex;
+  align-items: flex-start;
+}
+.radio-img {
+  width: 40rpx;
+  height: 40rpx;
+}
+.radio-text {
+  font-size: 30rpx;
+  /* margin-left: 20rpx; */
+  font-family:  'PingFang SC';
+  color: #6E6E7B;
+  font-weight: 400;
+  line-height: 46rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+.radio {
+  width: 40rpx;
+  height: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 4rpx;
+}

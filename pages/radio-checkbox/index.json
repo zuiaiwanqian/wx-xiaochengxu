@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "z-radio": "/components/z-radio/index",
+    "z-radio-group": "/components/z-radio-group/index",
+    "z-checkbox": "/components/z-checkbox/index",
+    "z-checkbox-group": "/components/z-checkbox-group/index"
+  },
+  "navigationBarTitleText": "radio-checkbox"
+}

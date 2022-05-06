@@ -1,0 +1,10 @@
+<view class="my-class">
+  <label class="label-radio" bindtap="tapRadio">
+    <view class="radio">
+      <image src="{{disabled ? disabledImg : checked ? selectedImg : noSelectedImg}}" class="radio-img"></image>
+    </view>
+    <view class="radio-text">
+      <slot></slot>
+    </view>
+  </label>
+</view>

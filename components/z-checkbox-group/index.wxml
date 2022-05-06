@@ -1,0 +1,3 @@
+<view class="my-class radio-group">
+  <slot></slot>
+</view>

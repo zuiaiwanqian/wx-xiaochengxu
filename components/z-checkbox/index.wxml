@@ -1,0 +1,10 @@
+<view class="my-class">
+  <label class="label-chekcbox" bindtap="tapCheckbox">
+    <view class="chekcbox">
+      <image src="{{disabled ? disabledImg : checked ? selectedImg : noSelectedImg}}" class="chekcbox-img"></image>
+    </view>
+    <view class="chekcbox-text">
+      <slot></slot>
+    </view>
+  </label>
+</view>

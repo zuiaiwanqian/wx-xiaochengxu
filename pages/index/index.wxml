@@ -1,0 +1,29 @@
+<view class="main">
+  <view class="titile">组件展示</view>
+  <view class="list">
+    <view class="list-view" bindtap="taoComponents">
+      radio,checkbox组件
+      <view class="list-icon">
+        🚓
+      </view>
+    </view>
+    <view class="list-view" bindtap="tapAudio">
+      播放音乐组件
+      <view class="list-icon">
+        🎶
+      </view>
+    </view>
+    <view class="list-view" bindtap="tapText">
+      文字跑马灯组件
+      <view class="list-icon">
+        🎣
+      </view>
+    </view>
+    <view class="list-view" bindtap="tapCss">
+      css3d vr效果
+      <view class="list-icon">
+        🎣
+      </view>
+    </view>
+  </view>
+</view>

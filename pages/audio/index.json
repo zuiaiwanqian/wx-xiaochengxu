@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "音频组件",
+  "usingComponents": {
+    "audio-text": "/components/audio-text/index"
+  }
+}

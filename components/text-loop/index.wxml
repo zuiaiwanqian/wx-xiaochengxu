@@ -1,0 +1,6 @@
+<view class="oneText">
+  <text class="text">{{text}}</text>
+  <view class="copyText">
+    <text class="inner" style="animation-duration: {{duration}}s; animation-iteration-count: {{infinite ? 'infinite' : 1}};">{{text}}</text>
+  </view>
+</view>

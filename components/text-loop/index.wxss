@@ -1,0 +1,27 @@
+.oneText {
+  position: relative;
+}
+.copyText {
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+.inner {
+  color: transparent;
+  background: linear-gradient(to right, red, red);
+  -webkit-background-clip: text;
+  background-repeat: no-repeat;
+  animation: landIn 20s linear normal;
+  background-size: 0% 100%;
+  animation-duration: 5s;
+  /* background-size: 0% 100%; */
+  /* transition: all 10s linear; */
+}
+@keyframes landIn {
+  0% {
+      background-size: 0 100%;
+  }
+  100% {
+      background-size: 100% 100%;
+  }
+}

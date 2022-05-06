@@ -1,0 +1,23 @@
+<view class="page">
+  <view class="title header">
+    播放音频组件
+    <view class="header-btn" bindtap="bindChangeType">
+      切换模式
+    </view>
+  </view>
+  <view>
+    <audio-text
+      fixed-audio="{{fixedAudio}}"
+      class="audio-text"
+      type="{{type}}"
+      audio-src="{{voiceDetail.video_info.video_num}}"
+      total-time="{{voiceDetail.video_info.video_time}}"
+      title="{{voiceDetail.video_info.topic_name}}"
+      text-list="{{voiceList}}"
+      voice-id="{{voiceId}}"
+      header-height="{{headerHeight}}"
+      top-title="{{voiceDetail.voice_title}}"
+    >
+    </audio-text>
+  </view>
+</view>

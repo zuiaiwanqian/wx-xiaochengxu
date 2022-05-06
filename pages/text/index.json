@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "文字卡拉OK效果",
+  "usingComponents": {
+    "text-loop": "/components/text-loop/index"
+  }
+}

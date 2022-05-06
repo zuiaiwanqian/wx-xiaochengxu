@@ -1,0 +1,33 @@
+<view style="padding: 20px;">
+  <view class="title" style="color:red">view封装的radio-checkbox</view>
+  <view class="title">单个单选</view>
+  <z-radio auto-check my-class="single">自动选中自动选中自动选中自动选中自动选中自动选中自动选中自动选中</z-radio>
+  <z-radio value="1" checked="{{radioChecked}}" my-class="single" bindchange="tapRadio">value, checked控制选中</z-radio>
+  <z-radio auto-check my-class="single" disabled>disabled</z-radio>
+  <view class="title">单选组</view>
+  <z-radio-group value="{{radioValue}}" bindonchange="changeRadioGroup">
+    <z-radio value="1" my-class="single">我是第一个</z-radio>
+    <z-radio value="2" my-class="single">我是第二个</z-radio>
+    <z-radio value="3" my-class="single">我是第三个</z-radio>
+    <z-radio value="4" my-class="single">我是第四个</z-radio>
+  </z-radio-group>
+  <view class="title">当前选中的值： {{ radioValue }}</view>
+  
+  
+  
+  <view class="title">单个多选</view>
+  <z-checkbox auto-check my-class="single">自动选中</z-checkbox>
+  <z-checkbox my-class="single" value="a" checked="{{checkboxChecked}}" bindchange="tapCheckbox">value,checked控制选中</z-checkbox>
+  <z-checkbox auto-check my-class="single" disabled>disabled</z-checkbox>
+  <view class="title">多选组</view>
+  <z-checkbox-group value="{{ checkboxValue }}" bindonchange="changeCheckboxGroup">
+    <z-checkbox value="1" my-class="single">苹果</z-checkbox>
+    <z-checkbox value="2" my-class="single">西瓜</z-checkbox>
+    <z-checkbox value="3" my-class="single" disabled>香蕉</z-checkbox>
+    <z-checkbox value="4" my-class="single">菠萝</z-checkbox>
+    <z-checkbox value="5" my-class="single" only>清空全部除了自己</z-checkbox>
+  </z-checkbox-group>
+  <view class="title">当前选中的数组值： {{ checkboxValue }}</view>
+  <view class="title">当前点击单个的value： {{ singleCheckboxValue }}</view>
+  <view class="title">当前点击单个的checked： {{ singleCheckboxChecked }}</view>
+</view>
