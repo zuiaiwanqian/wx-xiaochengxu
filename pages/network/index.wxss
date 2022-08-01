@@ -1,0 +1,8 @@
+text {
+    color: red;
+    font-weight: 600;
+}
+view {
+    text-align: center;
+    margin-bottom: 20rpx;
+}

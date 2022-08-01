@@ -1,0 +1,6 @@
+<view>获取网络状态与信息</view>
+<view>网络状态： <text>{{networkType}}</text></view>
+<view>wifi的SSID：<text>{{wifiInfo.SSID}}</text></view>
+<view>wifi的BSSID：<text>{{wifiInfo.BSSID}}</text></view>
+<view>wifi是否安全：<text>{{wifiInfo.secure}}</text></view>
+<view>wifi强度：<text>{{wifiInfo.signalStrength}}</text></view>

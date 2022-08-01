@@ -4,7 +4,8 @@
         "pages/radio-checkbox/index",
         "pages/audio/index",
         "pages/text/index",
-        "pages/css3d/index"
+        "pages/vrImg/index",
+        "pages/network/index"
     ],
     "window": {
         "backgroundTextStyle": "light",

@@ -1,5 +1,5 @@
-import { getBackgroundAudioManager, Throttler } from '../../utils/util'
-import lottie from "../../utils/animation";
+import { getBackgroundAudioManager, Throttler } from '../../utils/util.js'
+// import lottie from "./utils/animation";
 const throttler = new Throttler(500);
 
 Component({
