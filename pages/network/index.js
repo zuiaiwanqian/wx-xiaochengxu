@@ -13,22 +13,34 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad() {
+        wx.startWifi({
+          success: (res) => {
+              console.log('初始化wifi')
+          },
+        })
         wx.getNetworkType({
           success: (res) => {
               const { networkType } = res
               this.setData({ networkType }, () => {
                   if (networkType === 'wifi') {
-                      wx.getConnectedWifi({
-                        success: (res) => {
-                            console.log('res', res)
-                            const { wifi } = res
-                            this.setData({ wifiInfo: wifi })
-                        },
-                      })
+                      this.getWifiInfo()
                   }
               })
           },
         })
+    },
+
+    getWifiInfo () {
+        wx.getConnectedWifi({
+            success: (res) => {
+                console.log('res', res)
+                const { wifi } = res
+                this.setData({ wifiInfo: wifi })
+            },
+            complete: res => {
+                console.log(res)
+            }
+          })
     },
 
     /**

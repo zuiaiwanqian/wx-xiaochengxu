@@ -26,7 +26,16 @@ Page({
                 icon: '🚑',
                 type: 'network'
             },
-
+            {
+                name: '弹幕滚动效果',
+                icon: '🚎',
+                type: 'bullet'
+            },
+            {
+                name: 'echarts地图',
+                icon: '🚜',
+                type: 'chart'
+            },
         ]
     },
     onLoad() {},
@@ -51,6 +60,11 @@ Page({
             case 'network':
                 url = '/pages/network/index'
                 break;
+            case 'bullet':
+                url = '/pages/bullet/index'
+                break
+            case 'chart':
+                url = '/pages/charts/index'
             default:
                 break;
         }

@@ -4,3 +4,4 @@
 <view>wifi的BSSID：<text>{{wifiInfo.BSSID}}</text></view>
 <view>wifi是否安全：<text>{{wifiInfo.secure}}</text></view>
 <view>wifi强度：<text>{{wifiInfo.signalStrength}}</text></view>
+<view><text style="color: red">安卓需要打开位置信息才能获取成功！</text></view>

@@ -1,0 +1,85 @@
+/* pkgShare/components/map/index.wxss */
+.box {
+  width: 714rpx;
+  height: 596rpx;
+  position: relative;
+}
+
+.box1 {
+  width: 714rpx;
+  height: 572rpx;
+  position: relative;
+}
+
+.legend {
+  position: absolute;
+  height: 160rpx;
+  bottom: 24rpx;
+  left: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 20rpx;
+  color: #666c80;
+}
+
+.legend1 {
+  position: absolute;
+  height: 160rpx;
+  bottom: 12rpx;
+  left: 26rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 20rpx;
+  color: #666c80;
+}
+
+.item {
+  height: 32rpx;
+  display: flex;
+  line-height: 32rpx;
+}
+
+.item_color1 {
+  width: 8rpx;
+  background: #ff8c19;
+}
+
+.item_color2 {
+  width: 8rpx;
+  background: #ffa954;
+}
+
+.item_color3 {
+  width: 8rpx;
+  background: #ffc68c;
+}
+
+.item_color4 {
+  width: 8rpx;
+  background: #ffd9b3;
+}
+
+.item_color5 {
+  width: 8rpx;
+  background: #f0f4fa;
+}
+
+.item_text {
+  margin-left: 12rpx;
+}
+
+.cover {
+  width: 714rpx;
+  height: 596rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: red;
+}
+
+.tooltip {
+  position: fixed;
+  text-align: center;
+  background-color: rebeccapurple;
+  color: white;
+  padding: 10rpx 40rpx;
+  z-index: 9999;
+}

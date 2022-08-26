@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "multi-bullet": "/components/multiBullet/index"
+  }
+}

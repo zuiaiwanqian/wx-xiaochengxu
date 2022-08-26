@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "echarts地图",
+  "usingComponents": {
+    "map": "/components/map",
+    "ec-canvas": "/components/ec-canvas/ec-canvas"
+  }
+}

@@ -5,7 +5,9 @@
         "pages/audio/index",
         "pages/text/index",
         "pages/vrImg/index",
-        "pages/network/index"
+        "pages/network/index",
+        "pages/bullet/index",
+        "pages/charts/index"
     ],
     "window": {
         "backgroundTextStyle": "light",

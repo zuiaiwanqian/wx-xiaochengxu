@@ -1,0 +1,3 @@
+<view class="z-bullet">
+    <multi-bullet line="{{3}}"  bulletList="{{originList}}" bindclick="bindTapBullet" animateStatus="{{true}}"></multi-bullet>
+</view>

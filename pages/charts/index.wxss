@@ -1,0 +1,6 @@
+.map {
+	width: 714rpx;
+	height: 572rpx;
+	position: relative;
+	top: -12rpx;
+}

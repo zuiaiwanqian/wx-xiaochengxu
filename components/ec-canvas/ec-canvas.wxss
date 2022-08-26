@@ -1,0 +1,14 @@
+.ec-canvas {
+  width: 100%;
+  height: 100%;
+}
+.tooltip {
+  position: absolute;
+  text-align: center;
+  background-color: rebeccapurple;
+  color: white;
+  padding: 10rpx 40rpx;
+  top: 140rpx;
+  left: 100rpx;
+  z-index: 9999;
+}
