@@ -23,6 +23,23 @@ Page({
       { avatar: "", desc: "家里是爷爷奶奶在带他，游戏机" },
       { avatar: "", desc: "结尾是这样子的" },
     ],
+    verticalList: [
+      { avatar: "", job: "国资心理咨询师", desc: "1K+家庭辅导经验" },
+      { avatar: "", job: "家庭教育指导师", desc: "心理健康咨询师" },
+      { avatar: "", job: "幼儿园老师", desc: "15年教育从业经验" },
+      { avatar: "", job: "北师大教授", desc: "北师大教授" },
+    ],
+    domWidth: 0,
+  },
+
+  onLoad() {
+    wx.createSelectorQuery()
+      .selectAll(".z-container")
+      .boundingClientRect((res) => {
+        this.setData({ domWidth: res[0].width });
+        console.log(res[0].width);
+      })
+      .exec();
   },
 
   bindTapBullet(e) {

@@ -75,3 +75,124 @@
   justify-content: space-between;
   height: 100%;
 }
+
+.title {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  color: salmon;
+}
+
+.y-bullet {
+  width: 320rpx;
+  height: 340rpx;
+  margin: 0 auto;
+  margin-top: 40rpx;
+  background: #ffffff;
+  /* background: saddlebrown; */
+  border: 1rpx solid #edf0f9;
+  box-shadow: 0px 3rpx 10rpx rgba(16, 50, 145, 0.04);
+  border-radius: 8rpx;
+  padding-left: 16rpx;
+  padding-top: 20rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.y-bullet-list {
+  display: flex;
+  flex-direction: column;
+  /* animation: colScroll 8s linear infinite; */
+  padding-top: 20rpx;
+  box-sizing: border-box;
+}
+
+@keyframes colScroll {
+  0% {
+    /* 为0时，ios会闪动 */
+    transform: translateY(1);
+  }
+
+  100% {
+    transform: translateY(-216px);
+  }
+}
+
+.y-bullet-list--container {
+  display: flex;
+  flex-direction: column;
+}
+
+.y-bullet-single {
+  width: 100%;
+  height: 70rpx;
+  margin-bottom: 28rpx;
+  display: flex;
+  align-items: center;
+}
+
+.y-bullet-single-avatar {
+  width: 60rpx;
+  height: 60rpx;
+  background-color: seagreen;
+  border-radius: 50%;
+  margin-right: 12rpx;
+}
+
+.y-bullet-single-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.y-bullet-single-info__job {
+  color: #262d3d;
+  font-size: 24rpx;
+  line-height: 36rpx;
+}
+.y-bullet-single-info__desc {
+  font-size: 22rpx;
+  line-height: 32rpx;
+  color: #a1a3b3;
+}
+
+.z-container {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.z-single {
+  padding: 10rpx 20rpx;
+  color: white;
+  background-color: cadetblue;
+  margin-right: 22rpx;
+}
+
+.z-list {
+  display: flex;
+  flex-wrap: nowrap;
+  animation: rowScrollTest 2s linear infinite;
+}
+
+@keyframes rowScrollTest {
+  0% {
+    /* 为0时，ios会闪动 */
+    transform: translateX(1);
+  }
+
+  100% {
+    transform: translateX(var(--domWidth--));
+  }
+}
+
+.z-bullet-test {
+  width: 690rpx;
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  background-color: saddlebrown;
+  margin: 0 auto;
+  margin-top: 40rpx;
+  overflow: hidden;
+}

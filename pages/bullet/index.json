@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "multi-bullet": "/components/multiBullet/index"
+    "multi-bullet": "/components/multiBullet/index",
+    "vertical-bullet": "/components/verticalBullet/index"
   }
 }

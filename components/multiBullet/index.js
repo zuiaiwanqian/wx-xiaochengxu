@@ -30,6 +30,7 @@ Component({
       type: Boolean,
       value: true,
     },
+    // 弹幕滚动状态值
     animateStatus: {
       type: Boolean,
       value: true,

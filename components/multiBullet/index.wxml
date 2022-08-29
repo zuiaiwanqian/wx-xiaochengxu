@@ -1,31 +1,31 @@
 <view class="z-bullet-container" wx:if="{{!isInit}}">
-      <view class="z-bullet-list" wx:for="{{handleBulletList}}" wx:key="index">
-          <view class="z-bullet-list-container" >
-              <view class="z-bullet-single" wx:for="{{item.data}}" wx:for-index="index1" wx:for-item="item1" wx:key="index1">
-                  <image class="z-bullet-single-img" src="{{item1.avatar}}" />
-                  <view class="z-bullet-single-text">{{item1.desc}}</view>
-              </view>
-          </view>
-      </view>
-  </view>
-  <view class="z-bullet-container" wx:else>
-      <view
-          class="z-bullet-list"
-          wx:for="{{handleBulletList}}"
-          wx:key="index"
-          style="--marqueeWidth--:-{{item.throttleLeft}}px; animation-play-state: {{startAnimate ? 'running' : 'paused'}}; animation-duration: {{item.duration}}s; animation-delay: {{index * delayTime}}s"
-      >
-          <view class="z-bullet-list-container">
-              <view class="z-bullet-single" wx:for="{{item.data}}" wx:for-index="index1" wx:for-item="item1" wx:key="index1" bindtap="bindTapBullet" data-val="{{item1}}">
-                  <image class="z-bullet-single-img" src="{{item1.avatar}}" />
-                  <view class="z-bullet-single-text">{{item1.desc}}</view>
-              </view>
-          </view>
-          <view class="z-bullet-list-container">
-              <view class="z-bullet-single" wx:for="{{item.data}}" wx:for-index="index1" wx:for-item="item1" wx:key="index1" bindtap="bindTapBullet" data-val="{{item1}}">
-                  <image class="z-bullet-single-img" src="{{item1.avatar}}" />
-                  <view class="z-bullet-single-text">{{item1.desc}}</view>
-              </view>
-          </view>
-      </view>
-  </view>
+    <view class="z-bullet-list" wx:for="{{handleBulletList}}" wx:key="index">
+        <view class="z-bullet-list-container" >
+            <view class="z-bullet-single" wx:for="{{item.data}}" wx:for-index="index1" wx:for-item="item1" wx:key="index1">
+                <image class="z-bullet-single-img" src="{{item1.avatar}}" />
+                <view class="z-bullet-single-text">{{item1.desc}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="z-bullet-container" wx:else>
+    <view
+        class="z-bullet-list"
+        wx:for="{{handleBulletList}}"
+        wx:key="index"
+        style="--marqueeWidth--:-{{item.throttleLeft}}px; animation-play-state: {{startAnimate ? 'running' : 'paused'}}; animation-duration: {{item.duration}}s; animation-delay: {{index * delayTime}}s"
+    >
+        <view class="z-bullet-list-container">
+            <view class="z-bullet-single" wx:for="{{item.data}}" wx:for-index="index1" wx:for-item="item1" wx:key="index1" bindtap="bindTapBullet" data-val="{{item1}}">
+                <image class="z-bullet-single-img" src="{{item1.avatar}}" />
+                <view class="z-bullet-single-text">{{item1.desc}}</view>
+            </view>
+        </view>
+        <view class="z-bullet-list-container">
+            <view class="z-bullet-single" wx:for="{{item.data}}" wx:for-index="index1" wx:for-item="item1" wx:key="index1" bindtap="bindTapBullet" data-val="{{item1}}">
+                <image class="z-bullet-single-img" src="{{item1.avatar}}" />
+                <view class="z-bullet-single-text">{{item1.desc}}</view>
+            </view>
+        </view>
+    </view>
+</view>

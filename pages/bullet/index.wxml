@@ -1,3 +1,35 @@
+<view class="title">左右循环滚动</view>
 <view class="z-bullet">
     <multi-bullet line="{{3}}"  bulletList="{{originList}}" bindclick="bindTapBullet" animateStatus="{{true}}"></multi-bullet>
 </view>
+<view class="title">上下循环滚动</view>
+<view class="y-bullet">
+    <vertical-bullet bulletList="{{verticalList}}"></vertical-bullet>
+</view>
+
+<view class="z-bullet-test">
+    <block wx:if="{{domWidth === 0}}">
+        <view class="z-container">
+            <view class="z-single" wx:for="{{10}}" wx:key="index">
+                {{index}}
+            </view>
+        </view>
+    </block>
+    <block wx:else>
+        <view class="z-list" style="--domWidth--:-{{domWidth}}px;">
+            <view class="z-container">
+                <view class="z-single" wx:for="{{10}}" wx:key="index">
+                    {{index}}
+                </view>
+            </view>
+            <!--  -->
+            <view class="z-container">
+                <view class="z-single" wx:for="{{10}}" wx:key="index">
+                    {{index}}
+                </view>
+            </view>
+        </view>
+    </block>
+    
+</view>
+<view class="test" style=""></view>

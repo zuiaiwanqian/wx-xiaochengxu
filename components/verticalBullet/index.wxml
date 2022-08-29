@@ -1,0 +1,48 @@
+<view class="y-bullet-container" wx:if="{{!isInit}}">
+  <view class="y-bullet-list-container">
+      <view class="y-bullet-single" wx:for="{{bulletList}}" wx:key="index">
+          <image src="{{item.avatar}}" class="y-bullet-single-avatar"></image>
+          <view class="y-bullet-single-info">
+              <view class="y-bullet-single-info__job">
+                  {{item.job}}
+              </view>
+              <view class="y-bullet-single-info__desc">
+                  {{item.desc}}
+              </view>
+          </view>
+      </view>
+  </view>
+</view>
+<view class="y-bullet-container" wx:else>
+  <view
+    class="y-bullet-list"
+    style="--marqueeWidth--:-{{throttle}}px; animation-play-state: {{startAnimate ? 'running' : 'paused'}}; animation-duration: {{duration}}s"
+  >
+      <view class="y-bullet-list-container">
+          <view class="y-bullet-single" wx:for="{{bulletList}}" wx:key="index">
+              <image src="{{item.avatar}}" class="y-bullet-single-avatar"></image>
+              <view class="y-bullet-single-info">
+                  <view class="y-bullet-single-info__job">
+                      {{item.job}}
+                  </view>
+                  <view class="y-bullet-single-info__desc">
+                      {{item.desc}}
+                  </view>
+              </view>
+          </view>
+      </view>
+      <view class="y-bullet-list-container">
+          <view class="y-bullet-single" wx:for="{{bulletList}}" wx:key="index">
+              <image src="{{item.avatar}}" class="y-bullet-single-avatar"></image>
+              <view class="y-bullet-single-info">
+                  <view class="y-bullet-single-info__job">
+                      {{item.job}}
+                  </view>
+                  <view class="y-bullet-single-info__desc">
+                      {{item.desc}}
+                  </view>
+              </view>
+          </view>
+      </view>
+  </view>
+</view>
