@@ -4,11 +4,25 @@
   position: relative;
   border-radius: 12rpx;
   margin: 0 auto;
+  box-sizing: border-box;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(223, 231, 255, 1),
+    rgba(236, 241, 255, 0.8)
+  );
+  padding: 1rpx;
+}
+
+.map-container {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 12rpx;
   padding: 72rpx 18rpx 20rpx 18rpx;
   box-sizing: border-box;
 }
 
-.map::after {
+/* .map::after {
   content: "";
   position: absolute;
   width: 200%;
@@ -21,7 +35,7 @@
   transform-origin: 0 0;
   box-sizing: border-box;
   pointer-events: none;
-}
+} */
 
 .map-title {
   width: 326rpx;
@@ -48,35 +62,19 @@
   background-color: #ffffff;
 }
 
-.border-image-clip-path {
+.box {
+  width: 690rpx;
+  height: 620rpx;
+  background-image: linear-gradient(
+    180deg,
+    rgba(223, 231, 255, 1),
+    rgba(236, 241, 255, 0.8)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12rpx;
   margin: 0 auto;
   margin-top: 40rpx;
-  position: relative;
-  width: 200px;
-  height: 100px;
-  border: 2rpx solid;
-  border-image: linear-gradient(
-      45deg,
-      rgba(223, 231, 255, 1),
-      rgba(236, 241, 255, 0.8)
-    )
-    1;
-  clip-path: inset(0 round 12rpx);
-}
-
-.box {
-  width: 100px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  border-radius: 5px;
-  background-color: #ccc;
-  background-size: 0 2px;
-  transition: all 0.5s ease;
-  background-position: center bottom;
-}
-
-.box:hover {
-  background: #ccc linear-gradient(to right, blue, blue) no-repeat center bottom;
-  background-size: 100% 2px;
+  overflow: hidden;
 }

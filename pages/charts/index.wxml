@@ -4,7 +4,11 @@
         <view class="map-title-icon"></view>
         <view class="map-title-num">600%</view>
     </view>
-    <map cityList="{{cityList}}" show="{{true}}" hit="{{true}}"></map>
+    <view class="map-container">
+        <map cityList="{{cityList}}"></map>
+    </view>
 </view>
-
-<view class="border-image-clip-path"></view>
+<!-- 
+<view class="box">
+    <view class="box1"></view>
+</view> -->
