@@ -1,3 +1,10 @@
-<view>
-    <map cityList="{{cityList}}" class="map" show="{{true}}" hit="{{true}}"></map>
+<view class="map">
+    <view class="map-title">
+        <view class="map-title-text">全国投诉</view>
+        <view class="map-title-icon"></view>
+        <view class="map-title-num">600%</view>
+    </view>
+    <map cityList="{{cityList}}" show="{{true}}" hit="{{true}}"></map>
 </view>
+
+<view class="border-image-clip-path"></view>

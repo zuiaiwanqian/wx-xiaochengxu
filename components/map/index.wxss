@@ -1,40 +1,38 @@
-/* pkgShare/components/map/index.wxss */
 .box {
-  width: 714rpx;
-  height: 596rpx;
+  width: 654rpx;
+  height: 530rpx;
   position: relative;
 }
 
 .box1 {
-  width: 714rpx;
-  height: 572rpx;
+  width: 654rpx;
+  height: 530rpx;
   position: relative;
 }
 
 .legend {
+  width: 168rpx;
   position: absolute;
-  height: 160rpx;
-  bottom: 24rpx;
-  left: 26rpx;
+  height: 154rpx;
+  bottom: 0;
+  left: 6rpx;
   font-family: PingFangSC-Regular;
   font-size: 20rpx;
   color: #666c80;
 }
 
-.legend1 {
+.desc {
   position: absolute;
-  height: 160rpx;
-  bottom: 12rpx;
-  left: 26rpx;
-  font-family: PingFangSC-Regular;
+  top: -33rpx;
+  left: 20rpx;
   font-size: 20rpx;
-  color: #666c80;
+  color: #aaaaaa;
 }
 
 .item {
-  height: 32rpx;
+  height: 30rpx;
   display: flex;
-  line-height: 32rpx;
+  line-height: 30rpx;
 }
 
 .item_color1 {
@@ -76,10 +74,77 @@
 }
 
 .tooltip {
-  position: fixed;
-  text-align: center;
-  background-color: rebeccapurple;
-  color: white;
-  padding: 10rpx 40rpx;
+  position: absolute;
+  width: 252rpx;
+  height: 124rpx;
+  background: #ffffff;
+  box-shadow: 0px 4rpx 10rpx rgba(18, 38, 94, 0.12);
+  border-radius: 8rpx;
+  box-sizing: border-box;
   z-index: 9999;
+  padding: 16rpx 20rpx;
+}
+
+/* .tooltip::after {
+  content: "";
+  position: absolute;
+  width: 0rpx;
+  height: 0rpx;
+  left: -18rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: 18rpx solid transparent;
+  border-right: 18rpx solid #fff;
+  border-bottom: 18rpx solid transparent;
+  box-shadow: 0px 4rpx 10rpx rgba(18, 38, 94, 0.12);
+} */
+
+.title {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  line-height: 36rpx;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.title-city {
+  font-weight: 500;
+  color: #262d3d;
+}
+
+.title-line {
+  width: 2rpx;
+  height: 32rpx;
+  transform: scale(0.5);
+  background: #dfe2e9;
+  margin: 0 8rpx;
+}
+
+.title-desc {
+  color: #7a7a85;
+}
+
+.data {
+  margin-top: 4rpx;
+  width: 138rpx;
+  height: 52rpx;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.data-icon {
+  width: 32rpx;
+  height: 32rpx;
+  background-color: #4b7bfe;
+}
+
+.data-text {
+  font-weight: 500;
+  font-size: 34rpx;
+  line-height: 52rpx;
+  color: #1653fa;
+  margin-left: 8rpx;
 }

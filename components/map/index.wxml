@@ -1,34 +1,24 @@
 <!--pkgShare/components/map/index.wxml-->
-<view class="{{hit?'box1':'box'}}" catchtap="bindtapBox">
+<view class="box" catchtap="bindtapBox">
 	<ec-canvas id="mychart-dom-map" canvas-id="mychart-map" wx:if="{{ec}}" ec="{{ec}}">
-		<!-- <cover-view class="tooltip">
-			测试
-		</cover-view> -->
 	</ec-canvas>
-	<!-- <cover-view class="cover" wx:if="{{show}}"></cover-view> -->
-	<view class="{{hit?'legend1':'legend'}}">
-		<view class="item">
-			<view class="item_color1"></view>
-			<view class="item_text">16宗及以上</view>
+	<view class="legend">
+		<view class="desc">上涨比率</view>
+		<view class="item" wx:for="{{legendList}}" wx:key="index">
+			<view class="item_color{{index + 1}}"></view>
+			<view class="item_text">{{item}}</view>
 		</view>
-		<view class="item">
-			<view class="item_color2"></view>
-			<view class="item_text">11-15宗</view>
-		</view>
-		<view class="item">
-			<view class="item_color3"></view>
-			<view class="item_text">6-10宗</view>
-		</view>
-		<view class="item">
-			<view class="item_color4"></view>
-			<view class="item_text">1-5宗</view>
-		</view>
-		<view class="item">
-			<view class="item_color5"></view>
-			<view class="item_text">0宗</view>
-		</view>
+		
 	</view>
-	<view class="tooltip" style="top: {{top}}px; left: {{left}}px; display: {{top === 0 ? 'none' : 'block'}}">
-		{{city}}: {{value}}
+	<view class="tooltip" style="top: calc({{tooltipInfo.top}}); left: calc({{tooltipInfo.left}}); display: {{tooltipInfo.top ? 'block' : 'none'}}">
+		<view class="title">
+			<view class="title-city">{{tooltipInfo.name}}</view>
+			<view class="title-line"></view>
+			<view class="title-desc">网络问题家庭</view>
+		</view>
+		<view class="data">
+			<view class="data-icon"></view>
+			<view class="data-text">{{tooltipInfo.value}}%</view>
+		</view>
 	</view>
 </view>

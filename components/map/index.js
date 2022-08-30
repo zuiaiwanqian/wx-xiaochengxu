@@ -5,6 +5,13 @@ import geoJson from "./china.js";
 let pageInstance = {};
 let chart;
 
+const app = getApp();
+const { screenWidth } = app.globalData.appData;
+const tooltipLayout = {
+  width: 252,
+  height: 124,
+};
+
 function initChart(canvas, width, height, dpr) {
   chart = echarts.init(canvas, null, {
     width: width,
@@ -53,8 +60,8 @@ function initChart(canvas, width, height, dpr) {
         },
       },
       roam: false,
-      zoom: pageInstance.data.hit ? 1.1 : 1.2,
-      top: 30,
+      zoom: 1.2,
+      top: 25,
       label: {
         show: true,
         fontSize: 8,
@@ -253,24 +260,42 @@ Component({
     left: 0,
     value: "",
     city: "",
+    tooltipInfo: {},
+    legendList: ["32%及以上", "20%-32%", "10%-20%", "1%-10%", "0"],
+    throttleX: 0,
   },
 
   attached() {
     pageInstance = this;
+    this._sumThrottle();
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
+    _sumThrottle() {
+      const baseThrottleX = 200; // 在375的屏幕下超过了200，就让tooltip向右边展示
+      const baseScreenWidth = 375;
+      this.data.throttleX = (screenWidth * baseThrottleX) / baseScreenWidth;
+    },
     setPosition(info) {
       const {
         x,
         y,
         data: { name, value },
       } = info;
-      console.log(x, y);
-      this.setData({ top: y, left: x, value: value, city: name });
+      const { throttleX } = this.data;
+      const { width, height } = tooltipLayout;
+      const left = x > throttleX ? `${x}px - ${width}rpx` : `${x}px`;
+      const top = `${y}px - ${height / 2}rpx`;
+      const tooltipInfo = {
+        left,
+        top,
+        value,
+        name,
+      };
+      this.setData({ tooltipInfo });
     },
     // 处理渲染需要的数据
     dealMapData() {
@@ -310,13 +335,13 @@ Component({
 
     getColor(val) {
       // regionColors: ["#FF8C19", "#FFA954", "#FFC68C", "#FFD9B3", "#F5F9FF"]
-      if (val >= 16) {
+      if (val >= 32) {
         return "#FF8C19";
-      } else if (val > 10 && val <= 15) {
+      } else if (val > 20 && val <= 32) {
         return "#FFA954";
-      } else if (val > 5 && val <= 10) {
+      } else if (val >= 10 && val <= 20) {
         return "#FFC68C";
-      } else if (val > 0 && val <= 5) {
+      } else if (val >= 1 && val < 10) {
         return "#FFD9B3";
       } else {
         return "#F5F9FF";
@@ -344,8 +369,7 @@ Component({
     // 点击空白区域
     bindtapBox() {
       if (!this.data.selected) {
-        console.log("只点击空白区域");
-        this.setData({ top: 0, left: 0 });
+        this.setData({ tooltipInfo: {} });
         chart.dispatchAction({
           type: "unselect",
           name: this.data.lastClickRegion,
