@@ -5,10 +5,6 @@
         <view class="map-title-num">600%</view>
     </view>
     <view class="map-container">
-        <map cityList="{{cityList}}"></map>
+        <china-map cityList="{{cityList}}"></china-map>
     </view>
 </view>
-<!-- 
-<view class="box">
-    <view class="box1"></view>
-</view> -->

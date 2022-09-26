@@ -51,7 +51,7 @@ Page({
             case 'audio':
                 url = '/pages/audio/index'
                 break;
-            case 'test':
+            case 'text':
                 url = '/pages/text/index'
                 break;
             case 'vr':
