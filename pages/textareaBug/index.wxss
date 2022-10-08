@@ -1,0 +1,134 @@
+.page {
+  background: #f3f4f7;
+  box-sizing: border-box;
+  height: 100vh;
+  padding-bottom: 200rpx;
+  position: relative;
+  transition: bottom 0.3s linear;
+}
+
+.title {
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color: red;
+  background-color: #fff;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #edf0f9;
+  height: 106rpx;
+  background-color: #fff;
+  padding: 0 30rpx;
+  font-size: 32rpx;
+  line-height: 45rpx;
+  text-align: justify;
+  color: #262d3d;
+  box-sizing: border-box;
+}
+
+.form-title {
+  width: 160rpx;
+  margin-right: 30rpx;
+}
+
+.form-input {
+  flex: 1;
+}
+
+.placeholder {
+  font-size: 32rpx;
+  line-height: 45rpx;
+  text-align: justify;
+  color: #d0d1d9;
+}
+
+.form-textarea-view {
+  width: 100%;
+  height: 414rpx;
+  margin-top: 16rpx;
+  background-color: #fff;
+  position: relative;
+}
+
+.form-textarea-view textarea {
+  width: 100%;
+  height: 100%;
+  padding: 32rpx;
+  padding-bottom: 90rpx;
+  box-sizing: border-box;
+  font-size: 32rpx;
+  line-height: 48rpx;
+  color: #262d3d;
+  position: relative;
+  z-index: 1;
+}
+
+.form-textarea-view__count {
+  width: 125rpx;
+  height: 38rpx;
+  position: absolute;
+  font-size: 30rpx;
+  line-height: 46rpx;
+  color: #d0d1d9;
+  bottom: 32rpx;
+  left: 32rpx;
+}
+
+.btn {
+  background: #1653fa;
+  border-radius: 8rpx;
+  width: 690rpx;
+  height: 88rpx;
+  text-align: center;
+  line-height: 88rpx;
+  font-weight: 500;
+  font-size: 34rpx;
+  color: #ffffff;
+  margin: 0 auto;
+  margin-top: 40rpx;
+}
+
+.desc {
+  font-size: 26rpx;
+  line-height: 30rpx;
+}
+
+.title-view {
+  margin-bottom: 16rpx;
+  padding-bottom: 20rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.bug {
+  margin-top: 6rpx;
+  font-size: 26rpx;
+  line-height: 30rpx;
+  color: #1653fa;
+  margin-bottom: 16rpx;
+}
+
+.bug text {
+  color: red !important;
+  margin-left: 10rpx;
+}
+
+.mask {
+  width: 100%;
+  height: 400rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #000;
+  z-index: 99;
+  top: 500rpx;
+  display: none;
+}
+
+.form-auto-textarea {
+  flex: 1;
+  height: 45rpx;
+}

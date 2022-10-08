@@ -7,7 +7,8 @@
         "pages/vrImg/index",
         "pages/network/index",
         "pages/bullet/index",
-        "pages/charts/index"
+        "pages/charts/index",
+        "pages/textareaBug/index"
     ],
     "window": {
         "backgroundTextStyle": "light",

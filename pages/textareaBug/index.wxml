@@ -1,0 +1,68 @@
+
+<view class="page" style="bottom: {{pageMoveDistance}}px">
+  <view class="title-view">
+    <view class="title">安卓机型中的坑</view>
+    <view class="desc">1.仅给textarea绑定bindkeyboardheightchange事件，input也会触发</view>
+    <view class="bug">是否触发bindkeyboardchange事件, 值为{{keyboardHeight}} <text class="desc-important">必现</text></view>
+    <view class="desc">2.当hold-keyboaed为true时，连续切换会卡死键盘,并且不会再聚焦textarea</view>
+    <view class="bug"><text>必现</text></view>
+    <view class="desc">3.textarea层级过高，盖不住fixed元素</view>
+    <view class="bug"><text>必现</text></view>
+    <view class="desc">4.仅给textarea绑定bindfocus事件，点击input会触发textarea的focus事件</view>
+    <view class="bug">是否触发bindfocus事件，值为{{focusCount}}<text>偶现</text></view>
+    <view class="desc">5.在键盘抬起过程中page页面触发transition动画，会导致placeholder跳动</view>
+    <view class="bug"><text>必现</text></view>
+    <view class="desc">6.当给textarea绑定bindkeyboardheightchange事件，点击完成时不会将值设置为0</view>
+    <view class="bug">触发bindkeyboardchange事件，值为{{keyboardHeight}} <text class="desc-important">偶现</text></view>
+  </view>
+  <view class="form">
+    <view class="form-title">地址</view>
+    <textarea
+      class="form-auto-textarea"
+      placeholder="这是一个自动增高的textarea"
+      placeholder-class="placeholder"
+      hold-keyboard="{{true}}"
+      disable-default-padding="{{true}}"
+      auto-height="{{true}}"
+    >
+    </textarea>
+  </view>
+  <view class="form">
+    <view class="form-title">申请人姓名</view>
+    <input
+      class="form-input"
+      placeholder="请输入申请人姓名"
+      placeholder-class="placeholder"
+      hold-keyboard="{{true}}"
+      type="text"
+    >
+    </input>
+  </view>
+  <view class="form">
+    <view class="form-title">联系方式</view>
+    <input
+      class="form-input"
+      type="number"
+      placeholder="请输入联系方式"
+      placeholder-class="placeholder"
+      hold-keyboard="{{true}}"
+    >
+    </input>
+  </view>
+  <view class="form-textarea-view">
+    <textarea
+      class="form-textarea"
+      placeholder="请填写活动意向描述（选填）"
+      placeholder-class="placeholder"
+      bindkeyboardheightchange="bindKeyboardHeightChange"
+      bindfocus="bindFocus"
+      hold-keyboard="{{true}}"
+      disable-default-padding="{{true}}"
+      adjust-position="{{false}}"
+    >
+    </textarea>
+    <view class="form-textarea-view__count">25/500</view>
+  </view>
+  <view class="btn" bindtap="bindSubmit">提交合作申请</view>
+  <view class="mask"></view>
+</view>

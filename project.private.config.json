@@ -45,6 +45,12 @@
                     "pathName": "pages/charts/index",
                     "query": "",
                     "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/textareaBug/index",
+                    "query": "",
+                    "scene": null
                 }
             ]
         }
